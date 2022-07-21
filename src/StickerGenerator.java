@@ -1,5 +1,5 @@
 import javax.imageio.ImageIO;
-import java.awt.Graphics2D;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -14,7 +14,7 @@ public class StickerGenerator {
         // cria nova imagem em memória com transparência e com tamanho novo
         int width = originalImage.getWidth();
         int height = originalImage.getHeight();
-        int newHeight = height + 200;
+        int newHeight = height + 20;
 
         BufferedImage newImage = new BufferedImage(width, newHeight, BufferedImage.TRANSLUCENT);
 
@@ -22,7 +22,15 @@ public class StickerGenerator {
         Graphics2D graphics = (Graphics2D) newImage.getGraphics();
         graphics.drawImage(originalImage, 0, 0, null);
 
+        // configurar a fonte
+        Font font = new Font(Font.SANS_SERIF, Font.BOLD, 12);
+        graphics.setColor(Color.YELLOW);
+        graphics.setFont(font);
+
         // escrever uma frase na nova imagem
+        graphics.drawString("TOPZERA", width-100, newHeight-5);
+
+        System.out.println(graphics.getFon);
 
         // verifica se existe o diretório, caso não cria o mesmo
         File outputDirectory = new File("outputImage");
