@@ -30,8 +30,6 @@ public class StickerGenerator {
         // escrever uma frase na nova imagem
         graphics.drawString("TOPZERA", width-100, newHeight-5);
 
-        System.out.println(graphics.getFon);
-
         // verifica se existe o diretório, caso não cria o mesmo
         File outputDirectory = new File("outputImage");
         if (!outputDirectory.exists()) {
